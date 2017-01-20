@@ -224,7 +224,7 @@ def f(): # type: (x) -> x x
 [out]
 file:1: error: syntax error in type comment
 
-[case testDuplicateSignatures1]
+[case testDuplicateSignatures1-skip]
 def f() -> None: # type: () -> None
   pass
 def f(): # type: () -> None
@@ -232,7 +232,7 @@ def f(): # type: () -> None
 [out]
 file:1: error: Function has duplicate type signatures
 
-[case testDuplicateSignatures2]
+[case testDuplicateSignatures2-skip]
 def f(x, y: Z): # type: (x, y) -> z
   pass
 [out]
@@ -250,7 +250,7 @@ def f(x, y): # type: (X) -> z
 [out]
 file:1: error: Type signature has too few arguments
 
-[case testCommentFunctionAnnotationVarArgMispatch]
+[case testCommentFunctionAnnotationVarArgMispatch-skip]
 def f(x): # type: (*X) -> Y
     pass
 def g(*x): # type: (X) -> Y
@@ -259,7 +259,7 @@ def g(*x): # type: (X) -> Y
 file:1: error: Inconsistent use of '*' in function signature
 file:3: error: Inconsistent use of '*' in function signature
 
-[case testCommentFunctionAnnotationVarArgMispatch2]
+[case testCommentFunctionAnnotationVarArgMispatch2-skip]
 def f(*x, **y): # type: (**X, *Y) -> Z
     pass
 def g(*x, **y): # type: (*X, *Y) -> Z
