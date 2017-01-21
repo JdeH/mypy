@@ -110,6 +110,7 @@ MypyFile:1(
     IntExpr(255)))
 
 [case testLongLiteral-skip]
+# see typed_ast issue #26
 0L
 123L
 012L
@@ -368,6 +369,7 @@ MypyFile:1(
       PassStmt:1())))
 
 [case testDuplicateNameInTupleArgList_python2-skip]
+# see mypy issue #2732
 def f(a, (a, b)):
     pass
 def g((x, (x, y))):
